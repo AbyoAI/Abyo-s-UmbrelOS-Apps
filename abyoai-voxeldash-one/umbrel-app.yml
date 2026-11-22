@@ -23,3 +23,5 @@ path: ""
 
 storage:
   dataRoot: data
+
+icon: "https://github.com/AbyoAI/Abyo-s-UmbrelOS-Apps/blob/main/abyoai-voxeldash-one/assets/icon.png"
