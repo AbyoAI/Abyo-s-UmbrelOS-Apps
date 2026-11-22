@@ -1,8 +1,10 @@
+
 services:
   voxeldash-one:
     image: ghcr.io/gnmyt/voxeldash-one:latest
     restart: on-failure
     init: true
+    user: "1000:1000"
     network_mode: host
 
     volumes:
@@ -12,9 +14,9 @@ services:
       PORT: "7867"
       VOXELDASH_HOME: /data
       MASTER_HOST: "127.0.0.1"
-
+    
     security_opt:
       - no-new-privileges:true
-
+    
     cap_drop:
       - ALL
