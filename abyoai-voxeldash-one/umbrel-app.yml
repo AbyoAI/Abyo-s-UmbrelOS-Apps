@@ -1,7 +1,8 @@
 manifestVersion: 1
 id: abyoai-voxeldash-one
 name: VoxelDash One
-icon: "assets/icon.png"
+icon: "https://raw.githubusercontent.com/AbyoAI/Abyo-s-UmbrelOS-Apps/main/abyoai-voxeldash-one/assets/icon.png"
+gallery: []
 tagline: Manage your Minecraft servers from one dashboard
 category: Games
 version: "1.2.0"
