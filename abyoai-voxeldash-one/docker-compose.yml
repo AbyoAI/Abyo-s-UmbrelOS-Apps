@@ -1,6 +1,6 @@
 services:
   voxeldash-one:
-    image: ghcr.io/gnmyt/voxeldash-one:1.2.0
+    image: ghcr.io/gnmyt/voxeldash-one:latest
     restart: on-failure
     init: true
     network_mode: host
