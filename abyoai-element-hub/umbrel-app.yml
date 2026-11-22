@@ -1,0 +1,19 @@
+manifestVersion: 1
+id: abyoai-element-hub
+name: Element Personal Hub
+tagline: Your private, self-hosted Matrix messaging server
+category: social
+version: "0.1.0"
+port: 8085
+description: >-
+  A personal Matrix homeserver powered by Synapse, with Element Web as its
+  messaging interface. Designed for a private local network installation.
+developer: AbyoAI
+website: https://github.com/AbyoAI/Abyo-s-UmbrelOS-Apps
+dependencies: []
+repo: https://github.com/element-hq/synapse
+support: https://github.com/AbyoAI/Abyo-s-UmbrelOS-Apps/issues
+gallery: []
+path: ""
+defaultPassword: ""
+submitter: AbyoAI

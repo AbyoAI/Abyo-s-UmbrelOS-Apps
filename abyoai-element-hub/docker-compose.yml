@@ -1,0 +1,53 @@
+version: "3.7"
+
+services:
+  app_proxy:
+    environment:
+      APP_HOST: abyoai-element-hub_gateway_1
+      APP_PORT: 8080
+
+  gateway:
+    image: nginx:1.28-alpine
+    restart: on-failure
+    volumes:
+      - ${APP_DATA_DIR}/nginx/default.conf:/etc/nginx/conf.d/default.conf:ro
+    depends_on:
+      - element
+      - synapse
+    networks:
+      default:
+        aliases:
+          - element-hub-gateway
+
+  element:
+    image: vectorim/element-web:v1.12.35
+    restart: on-failure
+    volumes:
+      - ${APP_DATA_DIR}/element-config.json:/app/config.json:ro
+
+  synapse:
+    image: matrixdotorg/synapse:v1.165.0
+    restart: on-failure
+    environment:
+      SYNAPSE_SERVER_NAME: matrix.home.arpa
+      SYNAPSE_REPORT_STATS: "no"
+      SYNAPSE_CONFIG_PATH: /data/homeserver.yaml
+    volumes:
+      - ${APP_DATA_DIR}/synapse:/data
+    depends_on:
+      - postgres
+
+  postgres:
+    image: postgres:16-alpine
+    restart: on-failure
+    environment:
+      POSTGRES_USER: synapse
+      POSTGRES_PASSWORD: ${POSTGRES_PASSWORD:-CHANGE_THIS_PASSWORD_BEFORE_INSTALL}
+      POSTGRES_DB: synapse
+      POSTGRES_INITDB_ARGS: --encoding=UTF8 --locale=C
+    volumes:
+      - ${APP_DATA_DIR}/postgres:/var/lib/postgresql/data
+
+networks:
+  default:
+    name: abyoai-element-hub

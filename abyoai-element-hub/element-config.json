@@ -1,0 +1,13 @@
+{
+  "default_server_config": {
+    "m.homeserver": {
+      "base_url": "http://umbrel.local:8085",
+      "server_name": "matrix.home.arpa"
+    }
+  },
+  "disable_custom_urls": true,
+  "disable_guests": true,
+  "brand": "Element Personal Hub",
+  "default_federate": false,
+  "enable_presence": false
+}
