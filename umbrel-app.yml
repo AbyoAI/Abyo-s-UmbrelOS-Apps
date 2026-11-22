@@ -1,0 +1,25 @@
+manifestVersion: 1
+id: voxeldash-one
+name: VoxelDash One
+tagline: Manage your Minecraft servers from one dashboard
+category: Games
+version: "1.2.0"
+description: >-
+  VoxelDash One is a self-hosted control panel for creating,
+  managing, and monitoring multiple Minecraft servers.
+
+  Create and manage Minecraft servers, access live consoles,
+  manage files, install plugins, and handle backups from one interface.
+releaseNotes: ""
+
+developer: GNMYT
+website: https://voxeldash.dev
+repo: https://github.com/gnmyt/VoxelDash
+support: https://github.com/gnmyt/VoxelDash/issues
+
+port: 7867
+gallery: []
+path: ""
+
+storage:
+  dataRoot: data
